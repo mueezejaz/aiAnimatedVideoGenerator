@@ -4,13 +4,15 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "module",
+  "type": "commonjs",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch . --ext js,ts,html,css --exec \"electron .\""
   },
   "devDependencies": {
-    "electron": "^39.2.4"
+    "electron": "^39.2.4",
+    "nodemon": "^3.1.11"
   }
 }

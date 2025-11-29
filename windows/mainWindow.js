@@ -1,11 +1,7 @@
-import { BrowserWindow } from 'electron';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const { BrowserWindow } = require('electron');
+const path = require('path');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export default function createMainWindow() {
+function createMainWindow() {
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
@@ -15,6 +11,8 @@ export default function createMainWindow() {
     }
   });
   win.loadURL("http://localhost:5173");
+  win.webContents.openDevTools();
   return win;
 }
 
+module.exports = createMainWindow;
